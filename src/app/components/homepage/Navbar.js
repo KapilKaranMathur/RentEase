@@ -21,7 +21,7 @@ function RegisterForm({ closeModal }) {
       >
         ×
       </button>
-      <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">RentEase</h2>
+      <h2 className="text-4xl font-bold bg-gradient-to-r from-white-600 to-blue-600 bg-clip-text text-transparent mb-4">RentEase</h2>
       <h2 className="text-2xl font-semibold text-black mb-5">Create Your Rental Account</h2>
       <form onSubmit={handleRegister}>
         <div className="text-left mb-2">
@@ -65,8 +65,8 @@ function RegisterForm({ closeModal }) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              closeModal(); // close register
-              document.getElementById('open-login')?.click(); // open login
+              closeModal();
+              document.getElementById('open-login')?.click();
             }}
             className="text-blue-600 hover:underline"
           >
@@ -86,15 +86,26 @@ function Navbar() {
     <div>
       <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-black/40 backdrop-blur-md z-50">
         <div className="flex items-center space-x-2">
-          <span className="text-white text-xl font-bold">RentEase</span>
+          <span className="text-white text-2xl font-bold">RentEase</span>
         </div>
         <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white">
-          <Link href="/">Home</Link>
-          <Link href="/Properties">Rentals</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact</Link>
+          {[
+            { label: "Home", href: "/" },
+            { label: "Rentals", href: "/Properties" },
+            { label: "About Us", href: "/about" },
+            { label: "Blog", href: "/blog" },
+            { label: "Contact", href: "/contact" },
+          ].map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              className="transition-colors duration-300 hover:text-blue-400"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
+
         <div className="flex items-center space-x-4">
           <button
             id="open-login"
@@ -128,7 +139,7 @@ function Navbar() {
             >
               ×
             </button>
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">RentEase</h2>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-white-600 to-blue-600 bg-clip-text text-transparent mb-4">RentEase</h2>
             <h2 className="text-2xl font-semibold text-black mb-5">Sign In</h2>
             <p className="text-gray-600 mb-4 text-sm">
               Welcome back!<br /> Please sign in to manage your rental listings.
