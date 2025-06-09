@@ -24,7 +24,6 @@ function Howitworks() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 lg:gap-16 relative">
         
-        {/* Step 1 */}
         <div className="relative flex flex-col items-center text-center">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center mb-5 shadow-md relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -40,7 +39,6 @@ function Howitworks() {
             <ArrowRight className="h-8 w-8 text-gray-600"/>
         </div>
 
-        {/* Step 2 */}
         <div className="relative flex flex-col items-center text-center">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center mb-5 shadow-md relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -50,12 +48,10 @@ function Howitworks() {
             <p className="text-gray-600 max-w-xs leading-relaxed">Once you find a rental property you like, schedule a viewing and get in touch with the landlord.</p>
         </div>
 
-        {/* Arrow between Step 2 and 3 */}
         <div className="hidden md:block absolute right-[31.3333%] top-[9%] translate-x-[-5.4px]">
             <ArrowRight className="h-8 w-8 text-gray-600"/>
         </div>
 
-        {/* Step 3 */}
         <div className="relative flex flex-col items-center text-center">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center mb-5 shadow-md relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

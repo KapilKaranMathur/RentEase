@@ -91,7 +91,7 @@ function Navbar() {
         <div className="hidden md:flex items-center space-x-6 text-lg font-medium text-white">
           {[
             { label: "Home", href: "/" },
-            { label: "Rentals", href: "/Properties" },
+            { label: "Rentals", href: "/properties" },
             { label: "About Us", href: "/about" },
             { label: "Blog", href: "/blog" },
             { label: "Contact", href: "/contact" },
@@ -129,7 +129,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Login Modal */}
       {isLoginOpen && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center text-center text-gray-300">
           <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
@@ -185,7 +184,6 @@ function Navbar() {
         </div>
       )}
 
-      {/* Register Modal */}
       {isRegisterOpen && (
         <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center text-center text-gray-300">
           <RegisterForm closeModal={() => setIsRegisterOpen(false)} />

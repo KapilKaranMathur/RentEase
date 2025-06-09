@@ -21,7 +21,7 @@ export default function HeaderAndHero() {
   return ( 
     <section className="relative w-full"> 
       <video className="absolute inset-0 w-full object-cover z-[-1]" autoPlay loop muted > 
-        <source src="/videos/2.mp4" type="video/mp4" /> 
+        <source src="/videos/v2.mp4" type="video/mp4" /> 
         Your browser does not support the video tag. 
       </video> 
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div> 
