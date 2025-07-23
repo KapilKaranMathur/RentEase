@@ -9,10 +9,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-// ✅ Custom Popup (Non-intrusive)
 const CustomPopup = ({ message, type, onClose }) => {
   useEffect(() => {
-    const timer = setTimeout(onClose, 4000); // auto close
+    const timer = setTimeout(onClose, 4000);
     return () => clearTimeout(timer);
   }, [onClose]);
   
@@ -28,7 +27,6 @@ const CustomPopup = ({ message, type, onClose }) => {
   );
 };
 
-// ✅ Register Form
 function RegisterForm({ closeModal, setPopupMessage, setPopupType }) {
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -119,7 +117,6 @@ function RegisterForm({ closeModal, setPopupMessage, setPopupType }) {
   );
 }
 
-// ✅ Navbar
 function Navbar() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -226,7 +223,10 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* 🔐 Login Modal */}
+
+
+
+      {/* Login Modal */}
       {isLoginOpen && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-6">
           <div className="bg-black/40 backdrop-blur-xl border border-white/10 p-10 rounded-2xl shadow-xl w-full max-w-lg relative">
@@ -285,7 +285,7 @@ function Navbar() {
         </div>
       )}
 
-      {/* ✍️ Register Modal */}
+      {/* Register Modal */}
       {isRegisterOpen && (
         <RegisterForm
           closeModal={() => {

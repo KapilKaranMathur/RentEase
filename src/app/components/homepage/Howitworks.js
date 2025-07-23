@@ -34,6 +34,10 @@ function Howitworks() {
             
         </div>
 
+
+
+
+
         {/* Arrow between Step 1 and 2 */}
         <div className="hidden md:block absolute left-[31.3333%] top-[9%] translate-x-[5.4px]">
             <ArrowRight className="h-8 w-8 text-gray-600"/>
@@ -63,6 +67,9 @@ function Howitworks() {
         </div>
 
         <div className="w-full bg-gray-300 h-px mt-16"></div>
+
+
+
 
         {/* Stay Updated */}
         <div className="mt-[0.5px] text-center mb-16">

@@ -111,7 +111,7 @@ export default function HeaderAndHero({ user }) {
                     <button
                       key={loc}
                       type="button"
-                      onMouseDown={() => handleSuggestionClick(loc)} // <--- FIXED HERE
+                      onMouseDown={() => handleSuggestionClick(loc)}
                       className="w-full text-left px-4 py-2.5 hover:bg-gray-50 text-gray-700 font-medium cursor-pointer flex items-center gap-3 transition-colors duration-200"
                     >
                       <MapPin className="w-4 h-4 text-blue-600" />
