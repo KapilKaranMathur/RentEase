@@ -1,10 +1,11 @@
+"use client"
 import React from 'react'
-import Contactpage from '../components/About/TestPage'
+import ContactPage from '../components/Contact/contactpage'
 
 function page() {
   return (
     <div>
-      <Contactpage />
+      <ContactPage/>
     </div>
   )
 }

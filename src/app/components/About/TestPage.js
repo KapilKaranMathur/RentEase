@@ -43,7 +43,7 @@ const TestPage = () => {
       <div className="relative h-[75vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-60">
           <img
-            src="/images/img17.jpg"
+            src="/images/about.jpg"
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -114,6 +114,9 @@ const TestPage = () => {
         </div>
       </section>
 
+
+
+
       {/* Testimonial Carousel */}
       <section className="bg-blue-50 py-20">
         <div className="max-w-5xl mx-auto text-center px-4">
@@ -134,5 +137,4 @@ const TestPage = () => {
     </>
   );
 };
-
 export default TestPage;

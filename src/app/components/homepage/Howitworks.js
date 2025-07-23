@@ -61,8 +61,37 @@ function Howitworks() {
             <p className="text-gray-600 max-w-xs leading-relaxed">After the viewing, complete your application and sign the rental agreement to secure your new home.</p>
         </div>
         </div>
+
+        <div className="w-full bg-gray-300 h-px mt-16"></div>
+
+        {/* Stay Updated */}
+        <div className="mt-[0.5px] text-center mb-16">
+          <h3 className="text-4xl font-bold text-black mb-4 mt-16">
+            Join Our Newsletter
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Subscribe to our newsletter for the latest rental listings and real
+            estate insights.
+          </p>
+          <div className="flex gap-2 mb-4 justify-center">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="text-sm text-black px-3 py-2 rounded-md border border-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition cursor-pointer">
+              Subscribe
+            </button>
+          </div>
+          <p className="text-gray-500 text-sm">
+            By subscribing, you agree to our{" "}
+            <a href="#" className="text-blue-500 hover:underline">
+              Privacy Policy
+            </a>
+          </p>
+        </div>
+
     </div>
   );
 }
-
 export default Howitworks;

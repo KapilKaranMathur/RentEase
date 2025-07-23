@@ -39,7 +39,10 @@ export default function Properties() {
     );
   }, [searchText]);
 
-  const popularLocations = ["Mumbai", "Pune", "Delhi", "Bangalore", "Hyderabad"];
+  const popularLocations = [
+    "Mumbai", "Pune", "Delhi", "Bangalore", "Hyderabad", "Jodhpur", "Jaipur",
+    "Udaipur", "Jaisalmer", "Chennai", "Lucknow", "Rewa", "Azamgarh", "Kolkata"
+  ];
 
   const displayedSuggestions = popularLocations.filter((loc) =>
     loc.toLowerCase().includes(searchText.toLowerCase())
@@ -84,16 +87,16 @@ export default function Properties() {
                     }}
                     onFocus={() => setShowSuggestions(true)}
                     onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-                    className="w-full h-12 rounded-xl border border-gray-300 bg-white shadow-sm py-3 pl-12 pr-28 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600/30 focus:border-blue-600 transition-all duration-200"
+                    className="w-full h-12 rounded-xl border border-gray-300 bg-white shadow-sm py-3 pl-12 pr-28 text-gray-900 placeholder-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600/30 focus:border-blue-600 transition-all duration-200"
                     aria-label="Search properties"
                   />
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 w-5 h-5" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 w-5 h-5" />
 
                   {searchText && (
                     <button
                       type="button"
                       onClick={() => setSearchText("")}
-                      className="absolute right-20 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 transition-colors duration-200"
+                      className="absolute right-20 top-1/2 -translate-y-1/2 text-gray-800 hover:text-gray-700 transition-colors duration-200"
                       aria-label="Clear search"
                     >
                       <X className="w-4 h-4" />
@@ -105,7 +108,6 @@ export default function Properties() {
                     className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-4 py-2 flex items-center gap-2 transition-colors duration-200"
                     aria-label="Submit search"
                   >
-                    <Search className="w-4 h-4" />
                     Search
                   </button>
                 </div>
@@ -147,7 +149,7 @@ export default function Properties() {
             <div className="col-span-full text-center py-16">
               <div className="max-w-md mx-auto">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="w-8 h-8 text-gray-400" />
+                  <Search className="w-8 h-8 text-gray-900" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   No Properties Found
