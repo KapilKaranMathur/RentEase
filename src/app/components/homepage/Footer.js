@@ -16,6 +16,7 @@ function Footer() {
             </p>
           </div>
 
+
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">
               Quick Links
@@ -61,6 +62,7 @@ function Footer() {
             </ul>
           </div>
 
+
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
             <ul className="space-y-2">
@@ -86,6 +88,7 @@ function Footer() {
               </li>
             </ul>
           </div>
+
 
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">

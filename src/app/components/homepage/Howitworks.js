@@ -71,6 +71,7 @@ function Howitworks() {
 
 
 
+
         {/* Stay Updated */}
         <div className="mt-[0.5px] text-center mb-16">
           <h3 className="text-4xl font-bold text-black mb-4 mt-16">

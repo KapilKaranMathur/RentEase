@@ -27,6 +27,9 @@ const CustomPopup = ({ message, type, onClose }) => {
   );
 };
 
+
+
+
 function RegisterForm({ closeModal, setPopupMessage, setPopupType }) {
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -51,6 +54,8 @@ function RegisterForm({ closeModal, setPopupMessage, setPopupType }) {
       setPopupType("error");
     }
   };
+
+
 
   return (
     <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-6">
@@ -116,6 +121,9 @@ function RegisterForm({ closeModal, setPopupMessage, setPopupType }) {
     </div>
   );
 }
+
+
+
 
 function Navbar() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -284,6 +292,8 @@ function Navbar() {
           </div>
         </div>
       )}
+
+
 
       {/* Register Modal */}
       {isRegisterOpen && (
