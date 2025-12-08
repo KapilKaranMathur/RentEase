@@ -1,13 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
 import Navbar from "../homepage/Navbar";
 import Footer from "../homepage/Footer";
+import { MapPin, Phone, Mail, Send, Loader2, CheckCircle, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,153 +19,186 @@ export default function ContactPage() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitted(true);
-    } catch (error) {
-      console.error("Submission error:", error);
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
 
-      <section className="bg-slate-900 py-40 pb-20">
-        <div className="max-w-2xl mx-auto px-6 text-center text-white">
-          <h1 className="text-4xl md:text-4xl font-bold mb-4">
-            Get in touch
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-350/90 via-slate-650/80 to-slate-950" />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <span className="inline-block py-1 px-3 rounded-full bg-slate-950/20 border border-slate-950/30 text-slate-50 text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm">
+            Contact Us
+          </span>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Let's start a conversation
           </h1>
-          <div className="flex justify-center">
-            <div className="w-16 h-0.5 bg-blue-400 rounded-full mb-4" />
-          </div>
-          <p className="text-slate-300 text-lg max-w-md mx-auto leading-relaxed">
-            Have a question or want to work together? We'd love to hear from you.
+          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Have questions about a property? Need help with your listing? Our team is ready to assist you.
           </p>
         </div>
       </section>
 
-      <main className="pb-16 bg-white">
-        <div className="max-w-2xl mx-auto px-6">
-          {submitted ? (
-            <div className="text-center py-16">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  className="w-8 h-8 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+      <main className="container mx-auto px-4 -mt-16 relative z-20 pb-16">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row">
+          <div className="bg-slate-950 p-8 lg:p-10 text-white lg:w-2/5 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 rounded-full bg-slate-950/30 blur-3xl" />
+            <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 rounded-full bg-slate-900/30 blur-3xl" />
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold mb-2">Contact Information</h3>
+              <p className="text-slate-100 mb-8">Fill up the form and our team will get back to you within 24 hours.</p>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">+91 98765 43210</p>
+                    <p className="text-slate-100 text-xs">Mon-Fri, 9am to 6pm IST</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">help@rentease.com</p>
+                    <p className="text-slate-100 text-xs">Online support 24/7</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Headquarters</p>
+                    <p className="text-slate-100 text-xs leading-relaxed">
+                      89-6 BGKT, Jodhpur, Rajasthan, India
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-2xl font-light text-gray-900 mb-3">
-                Message sent
-              </h2>
-              <p className="text-gray-500">
-                We'll get back to you within 24 hours.
-              </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="mt-8 text-gray-600 hover:text-gray-900 underline underline-offset-4 transition-colors"
-              >
-                Send another message
-              </button>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-8 pt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                    Name
+            <div className="relative z-10 mt-8 lg:mt-0">
+              <div className="flex items-center gap-2 text-xs font-medium text-slate-100">
+                <MessageSquare className="w-3 h-3" />
+                <span>Live Chat available on Dashboard</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:w-3/5 p-8 lg:p-10 bg-white relative">
+            {submitted ? (
+              <div className="h-full flex flex-col items-center justify-center text-center py-8 animate-in fade-in zoom-in duration-500">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
+                <p className="text-slate-500 max-w-sm mx-auto mb-4">
+                  Thank you for reaching out. One of our property experts will get back to you shortly.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-2 bg-slate-950 text-white rounded-lg font-semibold hover:bg-slate-900 transition-colors shadow"
+                >
+                  Send Another Message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label htmlFor="name" className="text-xs font-semibold text-slate-700">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-950 focus:ring-2 focus:ring-slate-950/20 outline-none text-sm placeholder:text-slate-400"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label htmlFor="email" className="text-xs font-semibold text-slate-700">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-950 focus:ring-2 focus:ring-slate-950/20 outline-none text-sm placeholder:text-slate-400"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <label htmlFor="subject" className="text-xs font-semibold text-slate-700">
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:border-gray-900 focus:outline-none transition-colors placeholder:text-gray-400 text-gray-700"
-                    placeholder="Your name"
+                    className="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-950 focus:ring-2 focus:ring-slate-950/20 outline-none text-sm placeholder:text-slate-400"
+                    placeholder="Inquiry about Property #123"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Email
+
+                <div className="space-y-1">
+                  <label htmlFor="message" className="text-xs font-semibold text-slate-700">
+                    Message
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:border-gray-900 focus:outline-none transition-colors placeholder:text-gray-400 text-gray-700"
-                    placeholder="your@email.com"
+                    rows="3"
+                    className="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 focus:border-slate-950 focus:ring-2 focus:ring-slate-950/20 outline-none text-sm placeholder:text-slate-400 resize-none"
+                    placeholder="Tell us how we can help..."
                   />
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="2"
-                  className="w-full px-0 py-3 border-0 border-b-2 border-gray-200 bg-transparent focus:border-gray-900 focus:outline-none transition-colors placeholder:text-gray-400 text-gray-700"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-
-              <div className="pt-8">
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full md:w-auto px-12 py-4 bg-gray-900 text-white font-medium hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-slate-950 hover:bg-slate-900 text-white font-semibold py-3 rounded-lg shadow transition-all flex items-center justify-center gap-2 text-sm disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
-                    <span className="flex items-center justify-center">
-                      <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Sending
-                    </span>
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Sending...</span>
+                    </>
                   ) : (
-                    "Send message"
+                    <>
+                      <span>Send Message</span>
+                      <Send className="w-4 h-4" />
+                    </>
                   )}
                 </button>
-              </div>
-            </form>
-          )}
+              </form>
+            )}
+          </div>
         </div>
       </main>
 
